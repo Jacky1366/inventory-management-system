@@ -62,9 +62,6 @@ The system uses 5 interconnected tables:
 
 ![Database ERD](docs/database-erd.png) *(Optional: Add your ERD diagram)*
 
-## 🖥️ Screenshots
-
-*(Add screenshots of your GUI here)*
 
 ## 🔑 Key Functionalities
 
