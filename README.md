@@ -1,107 +1,116 @@
 # Inventory Management System
 
-A full-stack database application designed for retail inventory tracking and management. Built collaboratively by a team of four students as part of academic coursework, demonstrating both technical implementation and project coordination skills.
+A comprehensive Java-based inventory management system with MySQL database integration, featuring real-time stock tracking, supplier management, and sales analytics.
 
-## 🚀 Project Overview
+## 🚀 Features
 
-This application provides comprehensive CRUD (Create, Read, Update, Delete) operations for managing retail inventory through an intuitive Java Swing interface connected to a MySQL database backend.
+- **Product Management**: Full CRUD operations for inventory items
+- **Supplier Tracking**: Manage supplier information and relationships
+- **Customer Database**: Maintain customer records and order history
+- **Order Processing**: Create and track sales orders with automatic stock updates
+- **Reporting System**: Generate business insights including:
+  - Top selling products
+  - Customer purchase analytics
+  - Revenue tracking by product/supplier
+  - Inventory status reports
 
-## 💻 Technologies Used
+## 🛠️ Tech Stack
 
-- **Frontend:** Java Swing (GUI Framework)
-- **Backend:** Java (Core Application Logic)
-- **Database:** MySQL
-- **Connectivity:** JDBC (Java Database Connectivity)
-- **Development Tools:** IntelliJ IDEA
-- **Database Design:** ER Diagrams, Relational Schema
+- **Backend**: Java 22
+- **Database**: MySQL 8.0
+- **GUI Framework**: Java Swing
+- **Build Tool**: Maven
+- **JDBC**: MySQL Connector/J 8.0.33
 
-## ✨ Key Features
+## 📋 Prerequisites
 
-- **Complete CRUD Operations:** Add, view, update, and delete inventory items
-- **Database Integration:** Seamless connection between GUI and MySQL database
-- **Data Validation:** Input validation and error handling for data integrity
-- **User-Friendly Interface:** Intuitive Java Swing GUI for easy navigation
-- **Professional Database Design:** Normalized database schema with proper relationships
-- **Team Collaboration:** Coordinated development across four team members
+- Java JDK 8 or higher
+- MySQL Server 8.0+
+- Maven 3.6+
 
-## 🏗️ System Architecture
+## ⚙️ Installation
 
-```
-[Java Swing GUI] ←→ [Application Logic] ←→ [JDBC] ←→ [MySQL Database]
-```
-
-**Database Schema:**
-- Designed with ER diagrams following normalization principles
-- Implemented relational schema with proper foreign key relationships
-- Optimized for inventory tracking and reporting
-
-## 🎯 My Role & Contributions
-
-- **Team Leader:** Coordinated development efforts across four team members
-- **Database Architect:** Led database design and schema implementation
-- **Integration Specialist:** Implemented JDBC connectivity between frontend and backend
-- **Project Manager:** Organized final presentation showcasing system capabilities
-
-## 📋 What I Learned
-
-**Technical Skills:**
-- Database design principles and normalization
-- Java Swing GUI development and event handling
-- JDBC programming and database connectivity
-- SQL query optimization and data management
-
-**Soft Skills:**
-- Team leadership and coordination
-- Cross-functional collaboration between UI/UX and database teams
-- Project planning and milestone management
-- Professional presentation and demonstration skills
-
-## 🔧 Setup & Installation
-
-1. **Prerequisites:**
-   - Java JDK 8 or higher
-   - MySQL Server
-   - JDBC MySQL Connector
-
-2. **Database Setup:**
-   ```sql
-   CREATE DATABASE inventory_management;
-   -- Import provided schema and sample data
-   ```
-
-3. **Application Configuration:**
-   ```java
-   // Update database connection settings in config file
-   String url = "jdbc:mysql://localhost:3306/inventory_management";
-   String username = "your_username";
-   String password = "your_password";
-   ```
-
-4. **Run Application:**
+1. **Clone the repository**
    ```bash
-   javac -cp ".:mysql-connector-java.jar" *.java
-   java -cp ".:mysql-connector-java.jar" MainApplication
+   git clone https://github.com/yourusername/inventory-management-system.git
+   cd inventory-management-system
    ```
 
+2. **Set up the MySQL database**
+   ```sql
+   CREATE DATABASE inventory_db;
+   USE inventory_db;
+   ```
+   Then run the SQL script located in `/database/schema.sql`
 
-## 🎪 Final Presentation
+3. **Configure database connection**
+   
+   Update the connection parameters in `src/main/java/InventoryManagementGUI.java`:
+   ```java
+   private static final String DB_URL = "jdbc:mysql://localhost:3306/inventory_db";
+   private static final String DB_USER = "your_username";
+   private static final String DB_PASSWORD = "your_password";
+   ```
 
-Successfully delivered comprehensive project presentation demonstrating:
-- System architecture and design decisions
-- Live demonstration of all CRUD operations
-- Database integrity and performance optimization
-- Team collaboration and development process
+4. **Build the project**
+   ```bash
+   mvn clean install
+   ```
 
-## 🚧 Future Enhancements
+5. **Run the application**
+   ```bash
+   mvn exec:java -Dexec.mainClass="InventoryManagementGUI"
+   ```
 
-- Web-based interface using modern frameworks
-- RESTful API development for mobile integration
-- Advanced reporting and analytics features
-- User authentication and role-based access control
+## 📊 Database Schema
 
-## 👥 Team Credits
+The system uses 5 interconnected tables:
 
-This project was developed collaboratively by a team of four BTech IT students at Kwantlen Polytechnic University. My role focused on team coordination, database design, and system integration.
+- **Supplier**: Manages supplier information
+- **Product**: Stores product details and pricing
+- **Customer**: Maintains customer records
+- **Order**: Tracks sales transactions
+- **Order_Item**: Junction table for order-product relationships
 
----
+![Database ERD](docs/database-erd.png) *(Optional: Add your ERD diagram)*
+
+## 🖥️ Screenshots
+
+*(Add screenshots of your GUI here)*
+
+## 🔑 Key Functionalities
+
+### Product Management
+- Add, edit, and delete products
+- Track stock levels
+- Set pricing and supplier relationships
+
+### Order Processing
+- Create new orders
+- Add multiple products per order
+- Automatic total calculation
+- Order history tracking
+
+### Reporting
+- Revenue analysis by product
+- Top customers by spending
+- Supplier product listings
+- Sales trends and analytics
+
+## 📝 Project Structure
+
+```
+inventory-management-system/
+├── src/
+│   └── main/
+│       └── java/
+│           ├── InventoryManagementGUI.java
+│           └── TestDatabaseConnection.java
+├── database/
+│   └── schema.sql
+├── pom.xml
+└── README.md
+```
+
+
 
