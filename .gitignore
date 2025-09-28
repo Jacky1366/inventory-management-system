@@ -1,0 +1,21 @@
+# Compiled files
+*.class
+target/
+out/
+
+# IDE files
+.idea/
+*.iml
+*.iws
+.vscode/
+.settings/
+
+# Database credentials
+config.properties
+*.env
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
