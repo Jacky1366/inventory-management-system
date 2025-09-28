@@ -22,19 +22,7 @@ A comprehensive Java-based inventory management system with MySQL database integ
 - **Build Tool**: Maven
 - **JDBC**: MySQL Connector/J 8.0.33
 
-## 📋 Prerequisites
 
-- Java JDK 8 or higher
-- MySQL Server 8.0+
-- Maven 3.6+
-
-## ⚙️ Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/inventory-management-system.git
-   cd inventory-management-system
-   ```
 
 2. **Set up the MySQL database**
    ```sql
